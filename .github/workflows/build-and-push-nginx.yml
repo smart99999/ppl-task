@@ -2,18 +2,11 @@ name: Create docker image for PPL
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  SRC_IMAGE_NAME: nginx:latest
   BASEAUTH_PASSWORD: ${{ secrets.PPL_PASSWORD }}
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
 jobs:
   build:
     runs-on: ubuntu-latest
